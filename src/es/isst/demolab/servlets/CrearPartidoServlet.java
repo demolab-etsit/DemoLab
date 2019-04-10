@@ -35,6 +35,7 @@ public class CrearPartidoServlet extends HttpServlet {
 		
 		req.getSession().setAttribute( "partido_list", pdao.readAll() );
 		getServletContext().getRequestDispatcher( "/CrearPartidoView.jsp" ).forward( req, resp );
+		
 	}
 	
 }

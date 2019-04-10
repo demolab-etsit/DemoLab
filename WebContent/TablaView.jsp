@@ -52,19 +52,7 @@
 		</form>
 	 
 	
-	<h3>
-	<c:forEach items="${circunscripcion_list}" var="circ">
-		
-		 
-		    <c:forEach items="${partido_list}" var="part">
-			
-			    ${part.acronimo}${circ.nombre}
-			    
-		    
-			</c:forEach>
-			
-		</c:forEach>
-	</h3>
+	
 	
 	
 </body>

@@ -18,7 +18,16 @@ public class Elec_Circ_Part implements Serializable{
 	
 	
 	private int NVotos;
+	private int NEscanos;
 	
+	public int getNEscanos() {
+		return NEscanos;
+	}
+
+	public void setNEscanos(int nEscanos) {
+		NEscanos = nEscanos;
+	}
+
 	public Elec_Circ_Part() {
 		
 	}

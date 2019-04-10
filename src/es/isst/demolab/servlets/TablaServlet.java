@@ -35,8 +35,11 @@ public class TablaServlet extends HttpServlet{
 //		req.getSession().setAttribute( "circunscripcion_list", cdao.readAll() );
 //		
 		
-		Map<Partido, Map<Circunscripcion, Integer>> votos = new HashMap<Partido,Map<Circunscripcion,Integer>>();
-		req.getSession().setAttribute("votos", votos);
+//		Map<Partido, Map<Circunscripcion, Integer>> votos = new HashMap<Partido,Map<Circunscripcion,Integer>>();
+		
+		
+		
+//		req.getSession().setAttribute("votos", votos);
 		
 		
 		getServletContext().getRequestDispatcher( "/TablaView.jsp" ).forward( req, resp );
