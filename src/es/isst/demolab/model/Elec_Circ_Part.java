@@ -17,9 +17,15 @@ public class Elec_Circ_Part implements Serializable{
 	private Eleccion eleccion;
 	private int nvotos;
 	private String nvotosString;
-	private int nEscanos;
+	private int nEscanos=0;
 	private String nEscanosString;
 	
+	
+	
+	public Elec_Circ_Part() {
+		this.nEscanos=0;
+		this.nEscanosString="0";
+	}
 	public String getnEscanosString() {
 		return nEscanosString;
 	}
@@ -37,9 +43,7 @@ public class Elec_Circ_Part implements Serializable{
 		this.nEscanos = nEscanos;
 	}
 
-	public Elec_Circ_Part() {
-		this.nEscanos=0;
-	}
+	
 
 	public int getId() {
 		return id;

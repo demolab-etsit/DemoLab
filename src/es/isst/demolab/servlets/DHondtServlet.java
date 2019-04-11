@@ -1,7 +1,6 @@
 package es.isst.demolab.servlets;
 
 import java.io.IOException;
-import java.util.Collections;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -17,7 +16,6 @@ import es.isst.demolab.dao.PartidoDAOImplementation;
 import es.isst.demolab.model.Circunscripcion;
 import es.isst.demolab.model.Elec_Circ_Part;
 import es.isst.demolab.model.Partido;
-import java.util.Iterator;
 
 
 @WebServlet("/DHondtServlet")
