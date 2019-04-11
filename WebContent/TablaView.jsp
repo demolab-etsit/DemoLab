@@ -8,6 +8,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Bienvenida</title>
+<style>
+     <%@ include file="indexView.css"%>
+</style>
 </head>
 <body>
 	<h1>Simulación</h1>

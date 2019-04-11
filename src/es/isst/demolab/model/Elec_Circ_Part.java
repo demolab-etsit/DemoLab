@@ -13,23 +13,32 @@ public class Elec_Circ_Part implements Serializable{
 	private int id;
 	
 	private Partido partido;
-	private Circunscripcion Circunscripcion;
+	private Circunscripcion circunscripcion;
 	private Eleccion eleccion;
+	private int nvotos;
+	private String nvotosString;
+	private int nEscanos;
+	private String nEscanosString;
 	
-	
-	private int NVotos;
-	private int NEscanos;
-	
+	public String getnEscanosString() {
+		return nEscanosString;
+	}
+
+	public void setnEscanosString(String nEscanosString) {
+		this.nEscanosString = nEscanosString;
+	}
+
 	public int getNEscanos() {
-		return NEscanos;
+		return nEscanos;
 	}
 
 	public void setNEscanos(int nEscanos) {
-		NEscanos = nEscanos;
+		this.setnEscanosString(String.valueOf(nEscanos));
+		this.nEscanos = nEscanos;
 	}
 
 	public Elec_Circ_Part() {
-		
+		this.nEscanos=0;
 	}
 
 	public int getId() {
@@ -49,11 +58,11 @@ public class Elec_Circ_Part implements Serializable{
 	}
 
 	public Circunscripcion getCircunscripcion() {
-		return Circunscripcion;
+		return circunscripcion;
 	}
 
 	public void setCircunscripcion(Circunscripcion circunscripcion) {
-		Circunscripcion = circunscripcion;
+		this.circunscripcion = circunscripcion;
 	}
 
 	public Eleccion getEleccion() {
@@ -65,11 +74,24 @@ public class Elec_Circ_Part implements Serializable{
 	}
 
 	public int getNVotos() {
-		return NVotos;
+		return nvotos;
 	}
 
-	public void setNVotos(int nVotos) {
-		NVotos = nVotos;
+	public void setNVotos(int nvotos) {
+		this.setNvotosString(String.valueOf(nvotos));
+		this.nvotos = nvotos;
+	}
+
+	public String getNvotosString() {
+		return nvotosString;
+	}
+
+	public void setNvotosString(String nvotosString) {
+		this.nvotosString = nvotosString;
+	}
+
+	public void addEscanos() {
+		this.setNEscanos(this.getNEscanos() + 1);
 	}
 
 	

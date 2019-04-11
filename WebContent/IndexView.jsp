@@ -8,6 +8,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Bienvenida</title>
+<%--<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/indexView.css" /> --%>
+<style>
+     <%@ include file="indexView.css"%>
+</style>
 </head>
 <body>
 
@@ -16,8 +20,8 @@
 	
 	<!-- Creación de partidos circunscripciones y en un futuro elecciones -->
 	
-	<a href="CrearPartidoView.jsp">Crear partido</a>
-	<a href="CrearCircunscripcionView.jsp">Crear circunscripcion</a>
+	<a class="button" href="CrearPartidoView.jsp">Crear partido</a>
+	<a class="button" href="CrearCircunscripcionView.jsp">Crear circunscripcion</a>
 	<!-- <a href="CrearEleccionView.jsp">Crear eleccion</a> -->
 	
 	<!-- Formulario con un botón que nos lleva a la vista de la tabla de votos -->

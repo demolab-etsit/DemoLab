@@ -8,12 +8,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Bienvenida</title>
+<style>
+     <%@ include file="indexView.css"%>
+</style>
 </head>
 <body>
 
-<p>${votaciones[0][0].NVotos}</p>
-	
-	<table>
+
+
+	 <table>
 		
 		  <tr>
 		
@@ -33,10 +36,15 @@
 		
 		    <th>${circ.nombre}</th>
 		    <c:forEach items="${partido_list}" var="part">
-			
-			    <td>${votaciones[i][j].NVotos}</td>
-			    
-		    
+				<c:forEach items="${votaciones }" var="vota">
+					<c:if test="${ vota.circunscripcion.nombre == circ.nombre && vota.partido.acronimo == part.acronimo }">
+						
+						<td>
+						${vota.nEscanosString }
+						</td>
+						
+					</c:if>
+				</c:forEach>
 			</c:forEach>
 		
 		
