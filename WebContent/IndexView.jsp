@@ -20,13 +20,13 @@
 	
 	<!-- Creación de partidos circunscripciones y en un futuro elecciones -->
 	
-	<a class="button" href="CrearPartidoView.jsp">Crear partido</a>
-	<a class="button" href="CrearCircunscripcionView.jsp">Crear circunscripcion</a>
+	
 	<!-- <a href="CrearEleccionView.jsp">Crear eleccion</a> -->
 	
 	<!-- Formulario con un botón que nos lleva a la vista de la tabla de votos -->
 	<form method="GET" action="TablaServlet">
-	
+	<a class="button" href="CrearPartidoView.jsp">Crear partido</a>
+	<a class="button" href="CrearCircunscripcionView.jsp">Crear circunscripcion</a>
 			<!-- Menú desplegable para elegir las elecciones -->
 			
 			<%-- <select name="listaElecciones">
@@ -38,7 +38,7 @@
 			</select> --%>
 	
 	
-	<button type="submit">Simular</button>
+	<button class="button" type="submit">Simular</button>
 	
 	
 	</form>

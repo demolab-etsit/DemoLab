@@ -12,7 +12,7 @@
 		</style>
 	</head>
 	<body>
-		<h2>Crear Elecciones</h2>
+		<h1>Crear Elecciones</h1>
 		<form action="CrearEleccionServlet" method="post">
 			<p>
 				Fecha: <input type="date" name="date" />
@@ -21,9 +21,12 @@
 				Tipo: <input type="text" name="type" />
 			</p>
 			<p>
-				<button type="submit">Crear Elecciones</button>
+				<button class="button" type="submit">Crear Elecciones</button>	
+				<a class="button" href="IndexView.jsp">Volver</a>
+		
 			</p>
 		</form>
+
 		<h3>Listado de Elecciones</h3>
 		<table border="1">
 			<tr>

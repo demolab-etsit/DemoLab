@@ -12,7 +12,7 @@
 		</style>
 	</head>
 	<body>
-		<h2>Crear Partido</h2>
+		<h1>Crear Partido</h1>
 		<form action="CrearPartidoServlet" method="post">
 			<p>
 				Nombre: <input type="text" name="name" />
@@ -24,9 +24,12 @@
 				Acronimo: <input type="text" name="acronimo" />
 			</p>
 			<p>
-				<button type="submit">Crear Partido</button>
+				<button class="button" type="submit">Crear Partido</button>		
+				<a class="button" href="IndexView.jsp">Volver</a>
+		
 			</p>
 		</form>
+
 		<h3>Listado de Partidos</h3>
 		<table border="1">
 			<tr>

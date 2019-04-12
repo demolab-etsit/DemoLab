@@ -49,14 +49,10 @@
 		
 		</table>
 		
+		<a class="button" href="IndexView.jsp">Volver</a>
 		
-		
-		<button type="submit">Simular</button>
+		<button class="button" type="submit">Simular</button>
 		</form>
 	 
-	
-	
-	
-	
 </body>
 </html>

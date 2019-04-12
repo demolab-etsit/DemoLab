@@ -14,9 +14,9 @@
 </head>
 <body>
 
+	<h1>Resultados de la simulación</h1>
 
-
-	 <table>
+	 <table border="1">
 		
 		  <tr>
 		
@@ -54,7 +54,10 @@
 		
 		</table>
 		
-
+		<div><p></p></div>
+		
+		<a class="button" href="IndexView.jsp">Volver</a>
+		
 	
 	
 </body>

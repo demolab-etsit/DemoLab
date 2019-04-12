@@ -12,7 +12,7 @@
 		</style>
 	</head>
 	<body>
-		<h2>Crear Circunscripcion</h2>
+		<h1>Crear Circunscripcion</h1>
 		<form action="CrearCircunscripcionServlet" method="post">
 			<p>
 				Nombre: <input type="text" name="name" />
@@ -24,7 +24,8 @@
 				Número de escaños que aporta al Parlamento: <input type="number" name="NEscanos" />
 			</p>
 			<p>
-				<button type="submit">Crear Circunscripcion</button>
+				<button  class="button" type="submit">Crear Circunscripcion</button>
+				<a class="button" href="IndexView.jsp">Volver</a>
 			</p>
 		</form>
 		<h3>Listado de Circunscripciones</h3>
