@@ -8,7 +8,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Crear Partido</title>
 		<style>
-		     <%@ include file="indexView.css"%>
+		     <%@ include file="css/indexView.css"%>
 		</style>
 	</head>
 	<body>

@@ -10,7 +10,7 @@
 <title>Bienvenida</title>
 <%--<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/indexView.css" /> --%>
 <style>
-     <%@ include file="indexView.css"%>
+     <%@ include file="css/indexView.css"%>
 </style>
 </head>
 <body>
