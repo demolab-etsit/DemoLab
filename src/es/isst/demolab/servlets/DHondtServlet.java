@@ -76,8 +76,12 @@ public class DHondtServlet extends HttpServlet {
 		
 		Collection<Circunscripcion> circunscripcionList2= cdao.readAll() ;
 		
+		Circunscripcion[] circunscripcionArray2 = circunscripcionList2.toArray(new Circunscripcion[circunscripcionList2.size()]);
+		
 		req.getSession().setAttribute( "partidoArray", partidoArray );
 		req.getSession().setAttribute( "circunscripcionArray", circunscripcionArray );
+		req.getSession().setAttribute( "circunscripcionArray2", circunscripcionArray2 );
+
 		req.getSession().setAttribute( "circunscripcionList2", circunscripcionList2 );
 		req.getSession().setAttribute( "votaciones", votaciones );
 		getServletContext().getRequestDispatcher( "/ResultadosView.jsp" ).forward( req, resp );
