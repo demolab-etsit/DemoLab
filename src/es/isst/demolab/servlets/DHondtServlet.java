@@ -71,6 +71,7 @@ public class DHondtServlet extends HttpServlet {
 					),
 					votaciones);
 
+			asignaColorCircunscripcion(votaciones, circunscripcionArray[i]);
 		}
 		
 		
@@ -158,5 +159,19 @@ public class DHondtServlet extends HttpServlet {
 		}
 
 	}
+	
+	private void asignaColorCircunscripcion(Collection<Elec_Circ_Part> votaciones, Circunscripcion c) {
+		Collection <Elec_Circ_Part> ECPSporCirc = new ArrayList();
+		ECPSporCirc=sacaECPCircunscripcion(votaciones, c);
+		
+		int mayor=-2999;
+		for(Elec_Circ_Part ECP : ECPSporCirc) {
+			if(ECP.getNEscanos()>mayor) {
+				mayor=ECP.getNEscanos();
+				ECP.getCircunscripcion().setColorCircunscripcion(ECP.getPartido().getColor());
+			}
+		}
+	}
+	
 	
 }

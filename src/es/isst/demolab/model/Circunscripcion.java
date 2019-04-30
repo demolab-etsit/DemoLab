@@ -14,6 +14,7 @@ public class Circunscripcion implements Serializable {
 	private String Nombre;
 	private int NElectores;
 	private int NMaxEscanos;
+	private String colorCircunscripcion;
 	
 	public Circunscripcion () {
 		
@@ -42,5 +43,13 @@ public class Circunscripcion implements Serializable {
 	}
 	public void setNMaxEscanos(int nMaxEscanos) {
 		NMaxEscanos = nMaxEscanos;
+	}
+
+	public String getColorCircunscripcion() {
+		return colorCircunscripcion;
+	}
+
+	public void setColorCircunscripcion(String colorCircunscripcion) {
+		this.colorCircunscripcion = colorCircunscripcion;
 	}
 }
