@@ -36,7 +36,7 @@ public class DHondtServlet extends HttpServlet {
 		Collection<Circunscripcion> circunscripcionList= cdao.readAll() ;
 		
 		Circunscripcion[] circunscripcionArray = circunscripcionList.toArray(new Circunscripcion[circunscripcionList.size()]);
-		
+	
 		Partido[] partidoArray = partidoList.toArray(new Partido[partidoList.size()]);
 		
 		Collection<Elec_Circ_Part> votaciones = new ArrayList();
@@ -74,10 +74,11 @@ public class DHondtServlet extends HttpServlet {
 			asignaColorCircunscripcion(votaciones, circunscripcionArray[i]);
 		}
 		
-		
+		Collection<Circunscripcion> circunscripcionList2= cdao.readAll() ;
 		
 		req.getSession().setAttribute( "partidoArray", partidoArray );
 		req.getSession().setAttribute( "circunscripcionArray", circunscripcionArray );
+		req.getSession().setAttribute( "circunscripcionList2", circunscripcionList2 );
 		req.getSession().setAttribute( "votaciones", votaciones );
 		getServletContext().getRequestDispatcher( "/ResultadosView.jsp" ).forward( req, resp );
 	}
@@ -163,13 +164,37 @@ public class DHondtServlet extends HttpServlet {
 	private void asignaColorCircunscripcion(Collection<Elec_Circ_Part> votaciones, Circunscripcion c) {
 		Collection <Elec_Circ_Part> ECPSporCirc = new ArrayList();
 		ECPSporCirc=sacaECPCircunscripcion(votaciones, c);
-		
+		Elec_Circ_Part ECPganador = new Elec_Circ_Part();
 		int mayor=-2999;
 		for(Elec_Circ_Part ECP : ECPSporCirc) {
 			if(ECP.getNEscanos()>mayor) {
 				mayor=ECP.getNEscanos();
 				ECP.getCircunscripcion().setColorCircunscripcion(ECP.getPartido().getColor());
+				System.out.println("Nombre de la circunscripcion: " + ECP.getCircunscripcion().getNombre()
+						+ "Nombre del partido: " + ECP.getPartido().getNombre() 
+						+ "Color de la circunscripción: " + ECP.getCircunscripcion().getColorCircunscripcion()
+						+ "Número de escannos de la circunscripción: " +ECP.getNEscanos());
+				
+				ECPganador=ECP;
+				
+				CircunscripcionDAOImplementation.getInstancia().update(ECP.getCircunscripcion());
 			}
+			else if(ECP.getNEscanos()==mayor){
+				if(ECP.getNVotos()> ECPganador.getNVotos()) {
+					ECP.getCircunscripcion().setColorCircunscripcion(ECP.getPartido().getColor());
+					System.out.println("CASO DE EMPATE!!!!!!!!!!!!!!!!!!!!!!!!!!! Nombre de la circunscripcion: " + ECP.getCircunscripcion().getNombre()
+							+ "Nombre del partido: " + ECP.getPartido().getNombre() 
+							+ "Color de la circunscripción: " + ECP.getCircunscripcion().getColorCircunscripcion()
+							+ "Número de escannos de la circunscripción: " +ECP.getNEscanos());
+				
+					CircunscripcionDAOImplementation.getInstancia().update(ECP.getCircunscripcion());
+
+				
+				}
+				
+			}
+			
+			
 		}
 	}
 	
