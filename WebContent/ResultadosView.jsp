@@ -103,13 +103,18 @@
   		L.control.scale().addTo(map);
   		
   		
-  		var array2 = ${circunscripcion_array2};
-  		var i;
+
   		
   		function getColor(d) {
-  			for(i=0; i<array2.length;i++){
-  				if(d==array2[i].getNombre()){
-  					switch(array2[i].getColorCircunscripcion){
+  			
+  			<c:forEach items="${circunscripcionArray2}" var="r">
+  			if (d == "${r.nombre}"){
+  				var nombre = "${r.nombre}";
+  				var color = "${r.colorCircunscripcion}";
+  			}
+  			</c:forEach>
+  			
+  					switch(color){
   					case "Azul":
   						return '#00A3DE';
   					case "Rojo":
@@ -118,14 +123,13 @@
   						return '#62BA47';
   					
   					}
-  				}
-  			}
+  			
   		
   			
-  			if(d=="Madrid"){
+  			 /*	if(d=="Madrid"){
   				return '#800026';
   			}
-  		 /*    return d > 40 ? '#800026' :
+  		    return d > 40 ? '#800026' :
   		           d > 35  ? '#BD0026' :
   		           d > 30  ? '#E31A1C' :
   		           d > 25  ? '#FC4E2A' :
