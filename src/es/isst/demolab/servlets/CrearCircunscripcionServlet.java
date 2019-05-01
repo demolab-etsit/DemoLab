@@ -58,6 +58,7 @@ public class CrearCircunscripcionServlet extends HttpServlet {
 		System.out.println("\n Working directory = "+ urlToXML + "\n");
 		File xml = new File(urlToXML);
 		
+		//Inicializacion para leer el XML
 		DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder documentBuilder = null;
 		Document document = null;
@@ -68,6 +69,7 @@ public class CrearCircunscripcionServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
+		//Va obteniendo los datos del XML y los pasa a la base de datos
 		int numeroProvincias = document.getElementsByTagName("nombre").getLength();
 		String nombre = "";
 		String nElectores = "";
@@ -94,6 +96,7 @@ public class CrearCircunscripcionServlet extends HttpServlet {
 			CircunscripcionDAOImplementation.getInstancia().create(circunscripcion);
 		}
 		
+		req.getSession().setAttribute( "circunscripcion_list", CircunscripcionDAOImplementation.getInstancia().readAll() );
 		getServletContext().getRequestDispatcher( "/CrearCircunscripcionView.jsp" ).forward( req, resp );
 	}
 	

@@ -26,7 +26,8 @@
 			<p>
 				<button class="button" type="submit">Crear Partido</button>		
 				<a class="button" href="IndexView.jsp">Volver</a>
-		
+				<a class="button" href="CrearPartidoServlet">Rellenar Automáticamente</a>
+				<a class="button" href="BorrarPartidosServlet">Borrar Todo</a>
 			</p>
 		</form>
 
