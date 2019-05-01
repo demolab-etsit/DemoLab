@@ -26,6 +26,7 @@
 			<p>
 				<button  class="button" type="submit">Crear Circunscripcion</button>
 				<a class="button" href="IndexView.jsp">Volver</a>
+				<a class="button" href="CrearCircunscripcionServlet">Rellenar Automáticamente</a>
 			</p>
 		</form>
 		<h3>Listado de Circunscripciones</h3>
