@@ -37,7 +37,7 @@
 		    <th>${circ.nombre}</th>
 		    <c:forEach items="${partido_list}" var="part">
 			
-			    <td><input type="number" name="${part.acronimo}${circ.nombre}" min=0 ></td>
+			    <td><input type="number" name="${part.acronimo}${circ.nombre}" min=0 value=10></td>
 			    
 		    
 			</c:forEach>
@@ -53,6 +53,5 @@
 		
 		<button class="button" type="submit">Simular</button>
 		</form>
-	 
 </body>
 </html>

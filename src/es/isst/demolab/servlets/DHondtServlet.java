@@ -53,7 +53,7 @@ public class DHondtServlet extends HttpServlet {
 				String part = partidoArray[j].getAcronimo();
 				String circ = circunscripcionArray[i].getNombre();
 				String partCirc= part.concat(circ);
-			//	System.out.println(partCirc); //Imprimir cosas
+				System.out.println("partCirc= " + partCirc); //Imprimir cosas
 				cosa.setNVotos(Integer.parseInt(req.getParameter(partCirc)));
 				votaciones.add(cosa);
 			//	System.out.println(cosa.getNVotos());
@@ -176,8 +176,8 @@ public class DHondtServlet extends HttpServlet {
 				ECP.getCircunscripcion().setColorCircunscripcion(ECP.getPartido().getColor());
 				System.out.println("Nombre de la circunscripcion: " + ECP.getCircunscripcion().getNombre()
 						+ "Nombre del partido: " + ECP.getPartido().getNombre() 
-						+ "Color de la circunscripción: " + ECP.getCircunscripcion().getColorCircunscripcion()
-						+ "Número de escannos de la circunscripción: " +ECP.getNEscanos());
+						+ "Color de la circunscripciï¿½n: " + ECP.getCircunscripcion().getColorCircunscripcion()
+						+ "Nï¿½mero de escannos de la circunscripciï¿½n: " +ECP.getNEscanos());
 				
 				ECPganador=ECP;
 				
@@ -188,8 +188,8 @@ public class DHondtServlet extends HttpServlet {
 					ECP.getCircunscripcion().setColorCircunscripcion(ECP.getPartido().getColor());
 					System.out.println("CASO DE EMPATE!!!!!!!!!!!!!!!!!!!!!!!!!!! Nombre de la circunscripcion: " + ECP.getCircunscripcion().getNombre()
 							+ "Nombre del partido: " + ECP.getPartido().getNombre() 
-							+ "Color de la circunscripción: " + ECP.getCircunscripcion().getColorCircunscripcion()
-							+ "Número de escannos de la circunscripción: " +ECP.getNEscanos());
+							+ "Color de la circunscripciï¿½n: " + ECP.getCircunscripcion().getColorCircunscripcion()
+							+ "Nï¿½mero de escannos de la circunscripciï¿½n: " +ECP.getNEscanos());
 				
 					CircunscripcionDAOImplementation.getInstancia().update(ECP.getCircunscripcion());
 

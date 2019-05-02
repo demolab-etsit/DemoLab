@@ -54,7 +54,7 @@ public class CrearPartidoServlet extends HttpServlet {
 		}
 		
 		//Directorio al XML PartidosPoliticos.xml
-		String urlToXML = this.getServletContext().getRealPath("/WEB-INF/xml/PartidosPoliticos_2.xml");  
+		String urlToXML = this.getServletContext().getRealPath("/WEB-INF/xml/PartidosPoliticos_3.xml");  
 		System.out.println("\n Working directory = "+ urlToXML + "\n");
 		File xml = new File(urlToXML);
 		
@@ -82,9 +82,6 @@ public class CrearPartidoServlet extends HttpServlet {
 			nombre = document.getElementsByTagName("nombre").item(i).getTextContent();
 			acronimo = document.getElementsByTagName("acronimo").item(i).getTextContent();
 			color = document.getElementsByTagName("color").item(i).getTextContent();
-			nombre.strip();
-			acronimo.strip();
-			color.strip();
 			
 			partido.setNombre(nombre);
 			partido.setAcronimo(acronimo);

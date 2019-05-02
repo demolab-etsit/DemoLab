@@ -54,7 +54,7 @@ public class CrearCircunscripcionServlet extends HttpServlet {
 		}
 		
 		//Directorio al XML Provincias_3.xml
-		String urlToXML = this.getServletContext().getRealPath("/WEB-INF/xml/Provincias_4.xml");  
+		String urlToXML = this.getServletContext().getRealPath("/WEB-INF/xml/Provincias_5.xml");  
 		System.out.println("\n Working directory = "+ urlToXML + "\n");
 		File xml = new File(urlToXML);
 		
@@ -83,10 +83,7 @@ public class CrearCircunscripcionServlet extends HttpServlet {
 			nElectores = document.getElementsByTagName("NElectores").item(i).getTextContent();
 			nMaxEscanos = document.getElementsByTagName("NMaxEscanos").item(i).getTextContent();
 			colorCircunscripcion = document.getElementsByTagName("ColorCircunscripcion").item(i).getTextContent();
-			nombre.strip();
-			nElectores.strip();
-			nMaxEscanos.strip();
-			colorCircunscripcion.strip();
+			
 			System.out.println("Circunscripcion = "+ nombre + "/" + nElectores + "/" 
 					+ nMaxEscanos + "/" + colorCircunscripcion + "\n");
 			circunscripcion.setNombre(nombre);
