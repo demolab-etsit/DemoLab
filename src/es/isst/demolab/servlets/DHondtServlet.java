@@ -54,6 +54,7 @@ public class DHondtServlet extends HttpServlet {
 				String circ = circunscripcionArray[i].getNombre();
 				String partCirc= part.concat(circ);
 				System.out.println("partCirc= " + partCirc); //Imprimir cosas
+				req.setCharacterEncoding("UTF-8");
 				cosa.setNVotos(Integer.parseInt(req.getParameter(partCirc)));
 				votaciones.add(cosa);
 			//	System.out.println(cosa.getNVotos());
