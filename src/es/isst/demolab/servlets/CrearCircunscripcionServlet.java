@@ -54,7 +54,7 @@ public class CrearCircunscripcionServlet extends HttpServlet {
 		}
 		
 		//Directorio al XML Provincias_3.xml
-		String urlToXML = this.getServletContext().getRealPath("/WEB-INF/xml/Provincias_5.xml");  
+		String urlToXML = this.getServletContext().getRealPath("/WEB-INF/xml/Provincias_6.xml");  
 		System.out.println("\n Working directory = "+ urlToXML + "\n");
 		File xml = new File(urlToXML);
 		
