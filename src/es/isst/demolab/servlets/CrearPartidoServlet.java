@@ -72,7 +72,7 @@ public class CrearPartidoServlet extends HttpServlet {
 		//Va obteniendo los datos del XML y los pasa a la base de datos
 		int numeroPartidos = document.getElementsByTagName("nombre").getLength();
 		//Numero para contener el numero de Partidos, para ignorar los minoritarios
-		numeroPartidos = 10;
+		numeroPartidos = 5;
 		//Recorremos todos los partidos del documento XML
 		String nombre = "";
 		String acronimo = "";

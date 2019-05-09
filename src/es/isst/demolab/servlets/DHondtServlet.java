@@ -75,9 +75,22 @@ public class DHondtServlet extends HttpServlet {
 			asignaColorCircunscripcion(votaciones, circunscripcionArray[i]);
 		}
 		
+		//Conjuntos de escaños para toda España
+		/*
+		 * int[] resultado= getArrayEscanosPartido(partidoArray,votaciones);
+		 * req.getSession().setAttribute("arrayEscanos", resultado);
+		 */
+		Elec_Circ_Part[] ecp =getArrayEscanosPartido(partidoArray, votaciones); 
+		String[] labels= getLabels(ecp);
+		int[] escanios=getEscanos(ecp);
+		
+		req.getSession().setAttribute("labels", labels);
+		req.getSession().setAttribute("escanios", escanios);
 		Collection<Circunscripcion> circunscripcionList2= cdao.readAll() ;
 		
 		Circunscripcion[] circunscripcionArray2 = circunscripcionList2.toArray(new Circunscripcion[circunscripcionList2.size()]);
+		
+		
 		
 		req.getSession().setAttribute( "partidoArray", partidoArray );
 		req.getSession().setAttribute( "circunscripcionArray", circunscripcionArray );
@@ -201,7 +214,97 @@ public class DHondtServlet extends HttpServlet {
 			
 			
 		}
+		
 	}
 	
+	public Elec_Circ_Part getEscanosPartido(Partido p, Collection<Elec_Circ_Part> vot) {
+		int nEscanosTotal=0;
+		Elec_Circ_Part ecpResultado = new Elec_Circ_Part();
+		for (Elec_Circ_Part ecp : vot) {
+			if(ecp.getPartido().getNombre()==p.getNombre()) {
+				nEscanosTotal = nEscanosTotal + ecp.getNEscanos();
+			}
+		}
+		ecpResultado.setPartido(p);
+		ecpResultado.setNEscanos(nEscanosTotal);
+		return ecpResultado;
+	}
 	
+	public Elec_Circ_Part[] getArrayEscanosPartido(Partido[] arrayPartidos, Collection<Elec_Circ_Part> vot) {
+		Elec_Circ_Part[] resultado = new Elec_Circ_Part[arrayPartidos.length];
+		int i=0;
+		for(Partido p:arrayPartidos) {
+			resultado[i]=getEscanosPartido(p, vot);
+			i++;
+		}
+		System.out.println("Método getArrayEscanosPartido = " + "Posición 0: " +resultado[0].getPartido().getNombre() + "Posición 1: " + resultado[1].getPartido().getNombre());
+		
+		return resultado;
+	}
+	
+	public Elec_Circ_Part[] getArrayEscanosPartidosGanadores(Elec_Circ_Part[] ecps) {
+		Elec_Circ_Part[] ganadores = new Elec_Circ_Part[5];
+		Elec_Circ_Part ecp0 = new Elec_Circ_Part();
+		Elec_Circ_Part ecp1 = new Elec_Circ_Part();
+		Elec_Circ_Part ecp2 = new Elec_Circ_Part();
+		Elec_Circ_Part ecp3 = new Elec_Circ_Part();
+		Elec_Circ_Part ecp4 = new Elec_Circ_Part();
+		ganadores[0]= ecp0;
+		ganadores[1]= ecp1;
+		ganadores[2]= ecp2;
+		ganadores[3]= ecp3;
+		ganadores[4]= ecp4;
+		//Ordeno bubble sort
+		 int n = ecps.length;
+		    for (int i = 1; i <= n - 1; i++) {
+		        int x = ecps[i].getNEscanos();
+		        int j = i - 1;
+		        while (j >= 0 && x < ecps[j].getNEscanos()) {
+		        	ecps[j + 1] =ecps[j];
+		            j = j - 1;
+		        }
+		        ecps[j + 1] = ecps[i];
+		    }
+	    for(int t=0; t<5; t++) {
+	    	ganadores[t].setNEscanos(ecps[t].getNEscanos());
+	    	ganadores[t].setPartido(ecps[t].getPartido());
+	    }
+	    System.out.println("Ganadores: Ganador 1: " + ganadores[0].getPartido().getNombre() + "Ganador 2 :" + ganadores[1].getPartido().getNombre());
+		return ganadores;
+	}
+	
+	public String[] getLabels(Elec_Circ_Part[] ganadores) {
+		String[] labels = new String[5];
+		labels[0] ="";
+		labels[1] ="";
+		labels[2] ="";
+		labels[3] ="";
+		labels[4] ="";
+
+		int i=0;
+		for(Elec_Circ_Part ecp : ganadores) {
+			labels[i]=ecp.getPartido().getNombre();
+			i++;
+		}
+		
+		
+		return labels;
+	}
+	
+	public int[] getEscanos(Elec_Circ_Part[] ganadores) {
+		int[] data = new int[5];
+		data[0] =0;
+		data[1] =0;
+		data[2] =0;
+		data[3] =0;
+		data[4] =0;
+		int i=0;
+		for(Elec_Circ_Part ecp : ganadores) {
+			data[i]=ecp.getNEscanos();
+			i++;
+		}
+		
+		
+		return data;
+	}
 }
