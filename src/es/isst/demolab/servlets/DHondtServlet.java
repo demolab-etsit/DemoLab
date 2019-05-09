@@ -275,17 +275,14 @@ public class DHondtServlet extends HttpServlet {
 	
 	public String[] getLabels(Elec_Circ_Part[] ganadores) {
 		String[] labels = new String[5];
-		labels[0] ="";
-		labels[1] ="";
-		labels[2] ="";
-		labels[3] ="";
-		labels[4] ="";
+		labels[0] =ganadores[0].getPartido().getNombre();
+		labels[1] =ganadores[1].getPartido().getNombre();
+		labels[2] =ganadores[2].getPartido().getNombre();
+		labels[3] =ganadores[3].getPartido().getNombre();
+		labels[4] =ganadores[4].getPartido().getNombre();
+		
 
-		int i=0;
-		for(Elec_Circ_Part ecp : ganadores) {
-			labels[i]=ecp.getPartido().getNombre();
-			i++;
-		}
+		
 		
 		
 		return labels;
@@ -293,16 +290,13 @@ public class DHondtServlet extends HttpServlet {
 	
 	public int[] getEscanos(Elec_Circ_Part[] ganadores) {
 		int[] data = new int[5];
-		data[0] =0;
-		data[1] =0;
-		data[2] =0;
-		data[3] =0;
-		data[4] =0;
-		int i=0;
-		for(Elec_Circ_Part ecp : ganadores) {
-			data[i]=ecp.getNEscanos();
-			i++;
-		}
+		data[0] =ganadores[0].getNEscanos();
+		data[1] =ganadores[1].getNEscanos();
+		data[2] =ganadores[2].getNEscanos();
+		data[3] =ganadores[3].getNEscanos();
+		data[4] =ganadores[4].getNEscanos();
+		
+
 		
 		
 		return data;

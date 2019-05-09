@@ -7,11 +7,11 @@ import javax.persistence.*;
 @Entity
 public class Partido implements Serializable{
 
+	
+//	@GeneratedValue(strategy=GenerationType.IDENTITY)
+//	private int Id;
+	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int Id;
-	
-	
 	private String Nombre;
 	private String color;
 	private String acronimo;
@@ -20,12 +20,12 @@ public class Partido implements Serializable{
 
 		
 	}
-	public int getId() {
-		return Id;
-	}
-	public void setId(int id) {
-		Id = id;
-	}
+//	public int getId() {
+//		return Id;
+//	}
+//	public void setId(int id) {
+//		Id = id;
+//	}
 	public String getNombre() {
 		return Nombre;
 	}

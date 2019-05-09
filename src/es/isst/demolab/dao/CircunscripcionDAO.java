@@ -8,7 +8,7 @@ public interface CircunscripcionDAO {
 
 	public void create(Circunscripcion circunscripcion);
 
-	public Circunscripcion read(int id);
+	public Circunscripcion read(String Nombre);
 
 	public void update(Circunscripcion circunscripcion);
 

@@ -34,12 +34,12 @@ public class PartidoDAOImplementation implements PartidoDAO {
 	}
 
 	@Override
-	public Partido read(int id) {
+	public Partido read(String Nombre) {
 		Session session = SessionFactoryService.get().openSession();
 		try {
 		  session.beginTransaction();
 		  // operaciones
-		  Partido partido = session.load(Partido.class, id);
+		  Partido partido = session.get(Partido.class, Nombre);
 		  session.getTransaction().commit();
 		  return partido;
 		} catch (Exception e) {

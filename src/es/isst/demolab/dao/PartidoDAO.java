@@ -8,7 +8,7 @@ public interface PartidoDAO {
 
 	public void create(Partido partido);
 
-	public Partido read(int id);
+	public Partido read(String Nombre);
 
 	public void update(Partido partido);
 

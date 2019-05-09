@@ -35,12 +35,12 @@ public class CircunscripcionDAOImplementation implements CircunscripcionDAO {
 	}
 
 	@Override
-	public Circunscripcion read(int id) {
+	public Circunscripcion read(String Nombre) {
 		Session session = SessionFactoryService.get().openSession();
 		try {
 		  session.beginTransaction();
 		  // operaciones
-		  Circunscripcion circunscripcion = session.load(Circunscripcion.class, id);
+		  Circunscripcion circunscripcion = session.get(Circunscripcion.class, Nombre);
 		  session.getTransaction().commit();
 		  return circunscripcion;
 		} catch (Exception e) {
