@@ -84,10 +84,22 @@ public class TablaServlet extends HttpServlet{
 				for(int i = 0; i<numeroPartidos; i++) {
 					nombrePartido[i] =  document.getElementsByTagName("nombre").item(i).getTextContent();
 					numVotosDelPartido[i] = document.getElementsByTagName("votos_numero").item(i).getTextContent(); 
+					if(nombrePartido[i].contains("PSOE")) {
+						nombrePartido[i] = "PSOE";
+					}
+					if(nombrePartido[i].equals("PSC")) {
+						nombrePartido[i] = "PSOE";
+					}
+					if(nombrePartido[i].equals("PSE-EE")) {
+						nombrePartido[i] = "PSOE";
+					}
 					if(nombrePartido[i].equals("C's")) {
 						nombrePartido[i] = "Cs";
 					}
 					if(nombrePartido[i].contains("PODEMOS")) {
+						nombrePartido[i] = "PODEMOS";
+					}
+					if(nombrePartido[i].contains("GUANYEM")) {
 						nombrePartido[i] = "PODEMOS";
 					}
 				}

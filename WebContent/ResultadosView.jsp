@@ -177,10 +177,10 @@
 
 
 		
-		<div><p></p></div>
+		<div style = "height: 60px"><p></p></div>
 		
-		 <div id = "container" style = "width: 550px; height: 400px; margin: 0 auto">
-      </div>
+		 <div id = "container" style = "width: 80%; height: 600px; margin: 0 auto">
+      
       
       <%-- <c:forEach items="${partido_list }" var="parti">
       	<c:set var = "escaniosPorPart" scope = "session" value = "${0}"/>
@@ -193,8 +193,8 @@
       
       
       
-      <canvas id="myChart" width="400" height="200"></canvas>
-      
+      <canvas id="myChart" ></canvas>
+      </div>
       
       <script language = "JavaScript">
     
@@ -237,9 +237,9 @@
  
       </script>
 		
+		<div style = "height: 10px"><p></p></div>
 		<a class="button" href="IndexView.jsp">Volver</a>
 		
-	
 	
 </body>
 </html>
