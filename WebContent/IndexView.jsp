@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Bienvenida</title>
+<title>DemoLab</title>
 <%--<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/indexView.css" /> --%>
 <style>
      <%@ include file="css/indexView.css"%>
