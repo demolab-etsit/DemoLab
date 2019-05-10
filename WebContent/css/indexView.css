@@ -9,6 +9,15 @@ form{
 	text-align:center;
 }
 
+#imagenCandidatos {
+   content:url(https://upload.wikimedia.org/wikipedia/commons/5/58/Spanish_Congress_of_Deputies_after_1986_election.png);
+   width:600px;
+   height:400px;
+   margin:auto; 
+   padding:0; 
+   text-align: center;
+}
+
 .button {
   background-color: #00FF00; /* Green */
   border: none;

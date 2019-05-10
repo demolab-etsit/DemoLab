@@ -17,7 +17,7 @@
 
 	<!-- Mensaje de bienvenida -->
 	<h1>Bienvenido a DemoLab</h1>
-	
+	<div id="imagenCandidatos"></div>
 	<!-- Creación de partidos circunscripciones y en un futuro elecciones -->
 	
 	<!-- <img alt="Líderes políticos" src="C:/Users/smp-d/eclipse-workspace-DemoLab3/DemoLab/WebContent/1.png"> -->
