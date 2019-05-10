@@ -243,11 +243,11 @@ public class TablaServlet extends HttpServlet{
 			e.printStackTrace();
 		}
 		
-		for(Elec_Circ_Part i : votaciones) {
-			System.out.println("Provincia= " + i.getCircunscripcion().getNombre() + "\n");
-			System.out.println("\tEl partido " + i.getPartido().getAcronimo() + " ha obtenido "
-					+ i.getNvotosString() + " votos\n");
-		}
+		//for(Elec_Circ_Part i : votaciones) {
+		//	System.out.println("Provincia= " + i.getCircunscripcion().getNombre() + "\n");
+		//	System.out.println("\tEl partido " + i.getPartido().getAcronimo() + " ha obtenido "
+		//			+ i.getNvotosString() + " votos\n");
+		//}
 		req.getSession().setAttribute("votaciones", votaciones);
 		req.getSession().setAttribute( "partido_list", partidos );
 		req.getSession().setAttribute( "circunscripcion_list", circunscripciones );

@@ -30,15 +30,21 @@
  </form>
  
 	<h3>Inserte el número de votos en la tabla</h3>
+	
+	<p>Si lo prefieres, puedes rellenar automáticamente con los datos de:</p>
+	
 	<form name="resultados" method="POST" action="TablaServlet">
 		<select name="menuResultados" onchange="this.form.submit()">
-			<option selected="selected">Rellenar con resultados de</option>
+			<option selected="selected">Selecciona un año</option>
 			<option value="2019">Elecciones generales 2019</option>
 			<option value="2016">Elecciones generales 2016</option>
 			<option value="2015">Elecciones generales 2015</option>
 			<option value="2011">Elecciones generales 2011</option>
 		</select> 
  	</form>
+ 	
+ 	<div style = "height: 10px"><p></p></div>
+ 	
 	<form method="POST" action="DHondtServlet">
 		<table>
 			<tr>
